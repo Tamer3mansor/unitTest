@@ -22,3 +22,23 @@ describe("thats is practice on matches ", () => {
     expect(addFun.arr[1]).toBeGreaterThan(5);
   });
 });
+
+expect.extend({
+  toBeString(receive) {
+    const pass = typeof receive;
+    if (pass == 'string' || pass instanceof string) {
+      return {
+        message: () => `${receive} Is String `,
+        pass: true,
+      };
+    } else {
+      return {
+        message: () => `${receive} Is Not String Expected To Be String `,
+        pass: false,
+      };
+    }
+  },
+});
+it("Check if string with my own matcher",()=>{
+    expect("5").toBeString();
+})
