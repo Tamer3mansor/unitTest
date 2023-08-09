@@ -1,19 +1,24 @@
-const addFun = require ("../App");
+const addFun = require("../App");
+it("pre add function", () => {
+  expect(addFun.add()).toBe("add");
+});
 
-it("pre add function", ()=>{
-    expect(addFun.add()).toBe("add")
-})
-
-
-describe("this test for check divide methods", ()=>{
-it("divide to correct number ", ()=>{
-        expect(addFun.divide(5 , 6)).toBe(1)
-    })
-it("Return error if second number is zero", ()=>{
-        expect(addFun.divide(5 , 0)).toBe("Can not divide by zero or null")
-    })
-it("Return zero if no number", ()=>{
-        expect(addFun.divide()).toBe("Can not divide by zero or null")
-    })
-})
-
+describe("this test for check divide methods", () => {
+  it("divide to correct number ", () => {
+    expect(addFun.divide(5, 6)).toBe(1);
+  });
+  it("Return error if second number is zero", () => {
+    expect(addFun.divide(5, 0)).toBe("Can not divide by zero or null");
+  });
+  it("Return zero if no number", () => {
+    expect(addFun.divide()).toBe("Can not divide by zero or null");
+  });
+});
+describe("thats is practice on matches ", () => {
+  it("contain", () => {
+    expect(addFun.arr).toContain(5);
+  });
+  it("Greater Than", () => {
+    expect(addFun.arr[1]).toBeGreaterThan(5);
+  });
+});
